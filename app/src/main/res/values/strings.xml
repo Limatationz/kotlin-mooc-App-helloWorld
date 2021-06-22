@@ -2,4 +2,5 @@
     <string name="app_name">HelloWorld</string>
     <string name="text_aendern">Text Ändern</string>
     <string name="hello_android">Hello Android</string>
+    <string name="hello_kotlin">Hello Kotlin</string>
 </resources>

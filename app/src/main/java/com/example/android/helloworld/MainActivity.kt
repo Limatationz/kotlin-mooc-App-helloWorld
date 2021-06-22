@@ -4,22 +4,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.android.helloworld.databinding.ActivityMainBinding
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         Timber.i("MainActivity created!")
 
-        val button = findViewById<Button>(R.id.changeText_button)
-        val textView = findViewById<TextView>(R.id.hello_textView)
-
-        button.setOnClickListener {
-            if(textView.text == "Hello Android")
-                textView.text = "Hello Kotlin"
+        binding.changeTextButton.setOnClickListener {
+            if(binding.helloTextView.text == getString(R.string.hello_android))
+                binding.helloTextView.text = getString(R.string.hello_kotlin)
             else
-                textView.text = "Hello Android"
+                binding.helloTextView.text = getString(R.string.hello_android)
         }
     }
 }
