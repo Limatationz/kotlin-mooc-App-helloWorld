@@ -15,11 +15,6 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.changeText_button)
         val textView = findViewById<TextView>(R.id.hello_textView)
 
-        button.setOnClickListener {
-            if(textView.text == "Hello Android")
-                textView.text = "Hello Kotlin"
-            else
-                textView.text = "Hello Android"
-        }
+        button.setOnClickListener { textView.text = "Hello Kotlin" }
     }
 }
